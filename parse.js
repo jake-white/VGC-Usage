@@ -61,12 +61,14 @@ var parseThing = function(data, splitter){
 
 
 var display = function(mon){
+  $('#'+currentMon).css("background-color","");
+  $('#'+mon).css("background-color","#5693ca");
   currentMon = mon;
   $('#tbl2.tbl-body').html("");
   var lengths = [moves[mon].length, abilities[mon].length, items[mon].length, spreads[mon].length]; //I am lazy and need the longest list
   lengths.sort(function(a, b){return a-b});
   console.log(lengths);
-  for(var i = 0; i < lengths[3]; ++i){
+  for(var i =0; i < lengths[3] - 1; ++i){
   if(moves[mon][i] == undefined) moves[mon][i] = "";
   if(abilities[mon][i] == undefined) abilities[mon][i] = "";
   if(items[mon][i] == undefined) items[mon][i] = "";
