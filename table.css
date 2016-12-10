@@ -1,7 +1,7 @@
 .columns {
-    -webkit-column-count: 3; /* Chrome, Safari, Opera */
-    -moz-column-count: 3; /* Firefox */
-    column-count: 3;
+    -webkit-column-count: 4; /* Chrome, Safari, Opera */
+    -moz-column-count: 4; /* Firefox */
+    column-count: 4;
 }
 body, html {
     margin:0;
@@ -48,7 +48,8 @@ body, html {
 
 #secondary {
     float: left;
-    width: 60%;
+    width: 50%;
+    height: 100%;
 }
 
 #footer {
