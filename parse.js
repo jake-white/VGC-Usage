@@ -67,7 +67,6 @@ var display = function(mon){
   $('#tbl2.tbl-body').html("");
   var lengths = [moves[mon].length, abilities[mon].length, items[mon].length, spreads[mon].length]; //I am lazy and need the longest list
   lengths.sort(function(a, b){return a-b});
-  console.log(lengths);
   for(var i =0; i < lengths[3] - 1; ++i){
   if(moves[mon][i] == undefined) moves[mon][i] = "";
   if(abilities[mon][i] == undefined) abilities[mon][i] = "";
