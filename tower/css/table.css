@@ -1,0 +1,152 @@
+.columns {
+    -webkit-column-count: 4; /* Chrome, Safari, Opera */
+    -moz-column-count: 4; /* Firefox */
+    column-count: 4;
+}
+body, html {
+    margin:0;
+    padding:0;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background: #f7f7f7;
+    word-wrap: break-word;
+}
+
+#header{
+    color: #ffffff;
+    background:#000000;
+    border-bottom:1px solid #333333;
+    box-shadow:inset 1px 1px 0 rgba(255,255,255,.6),0px 2px 2px rgba(0,0,0,.15);
+    height:5vh;
+    line-height: 5vh;
+}
+
+#header a {
+    color: #D8A10A;
+    text-decoration: none;
+}
+.nav{
+    display:block;
+    list-style:none;
+    margin:0;
+    padding:0;
+    float:left;
+    padding:15px 6px 15px 6px;
+}
+
+#container {
+    margin: 0 auto;
+    height:94vh;
+}
+
+#primary {
+    float: left;
+    width: 20%;
+    height: 100%;
+}
+
+#content {
+    float: left;
+    width: 20%;
+}
+
+#secondary {
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+
+
+#footer {
+    clear: both;
+}
+
+h1{
+  font-size: 30px;
+  color: #080c17;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.mh-site-logo{
+  padding: 20px;
+}
+table{
+  width: 100%;
+  table-layout: fixed;
+}
+.tbl-header{
+  font: bold 12px/18px sans-serif;
+  background-color: #1e3864;
+ }
+.tbl-content{
+  border-top: 5px solid #e64946;
+  border-left: 2px solid black;
+  max-height: 80%;
+  overflow-x:auto;
+  margin-top: 0px;
+}
+th{
+  padding: 10px 15px;
+  text-align: left;
+  color: #fff;
+  text-transform: uppercase;
+}
+.trChild:hover { 
+    background-color: #e64946;
+}
+
+td{
+  padding: 15px;
+  text-align: left;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 12px;
+  color: #080c17;
+}
+
+section{
+  margin: 50px;
+}
+
+
+/* follow me template */
+.made-with-love {
+  margin-top: 40px;
+  padding: 10px;
+  clear: left;
+  text-align: center;
+  font-size: 10px;
+  font-family: arial;
+  color: #fff;
+}
+.made-with-love i {
+  font-style: normal;
+  color: #F50057;
+  font-size: 14px;
+  position: relative;
+  top: 2px;
+}
+.made-with-love a {
+  color: #fff;
+  text-decoration: none;
+}
+.made-with-love a:hover {
+  text-decoration: underline;
+}
+
+
+/* for custom scrollbar for webkit browser*/
+
+::-webkit-scrollbar {
+    width: 6px;
+} 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+} 
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
