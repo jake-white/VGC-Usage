@@ -53,6 +53,7 @@ var parseMoves = function(data){
   moves = parseThing(data, "Moves");
   items = parseThing(data, "Items");
   spreads = parseThing(data, "Spreads");
+  teammates = parseThing(data, "Teammates");
   display(currentMon);
 }
 
@@ -77,18 +78,20 @@ var display = function(mon){
   $('#'+mon).css("background-color","#e64946");
   currentMon = mon;
   $('#tbl2.tbl-body').html("");
-  var lengths = [moves[mon].length, abilities[mon].length, items[mon].length, spreads[mon].length]; //I am lazy and need the longest list
+  var lengths = [moves[mon].length, abilities[mon].length, items[mon].length, spreads[mon].length, teammates[mon].length]; //I am lazy and need the longest list
   lengths.sort(function(a, b){return a-b});
-  for(var i =0; i < lengths[3] - 1; ++i){
+  for(var i =0; i < lengths[lengths.length-1] - 1; ++i){
   if(moves[mon][i] == undefined) moves[mon][i] = "";
   if(abilities[mon][i] == undefined) abilities[mon][i] = "";
   if(items[mon][i] == undefined) items[mon][i] = "";
   if(spreads[mon][i] == undefined) spreads[mon][i] = "";
+  if(teammates[mon][i] == undefined) teammates[mon][i] = "";
    $('#tbl2.tbl-body').append("<tr>\
             <td>" + moves[mon][i] + "</td>\
             <td>" + abilities[mon][i] + "</td>\
             <td>" + items[mon][i] + "</td>\
             <td>" + spreads[mon][i] + "</td>\
+            <td>" + teammates[mon][i] + "</td>\
             </tr>");
   }
 }
