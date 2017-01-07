@@ -110,7 +110,7 @@ table{
 }
 th{
   padding: 10px 15px;
-  text-align: left;
+  text-align: middle;
   color: #fff;
   text-transform: uppercase;
 }
@@ -141,7 +141,7 @@ td{
 }
 
 .percentTD {
-  width: 20%;  
+  width: 10%;  
 }
 
 
