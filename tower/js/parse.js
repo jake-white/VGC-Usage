@@ -32,9 +32,9 @@ var parseMons = function(data){
  		names[i] = data[i].substring(name_start, name_end).trim();
  		usages[i] = data[i].substring(usage_start, usage_end).trim();
  		$('#tbl1.tbl-body ').append("<tr id = " + rank + " class = trChild>\
-          <td>" + rank + "</td>\
-          <td>" + names[i] + "</td>\
-          <td>" + usages[i] + "</td>\
+          <td class = rankTD>" + rank + "</td>\
+          <td class = nameTD>" + names[i] + "</td>\
+          <td class = percentTD>" + usages[i] + "</td>\
         	</tr>");
     var id = rank
     handleElement(id);
