@@ -55,8 +55,6 @@ var parseMons = function(data){
     else dexNumber = dexNums[shorten].num;
 
     usages[i] = parseFloat(usages[i]).toFixed(2);
-    console.log(shorten + " = " + dexNumber)
-    console.log(dexNums["silvally"].num);
  		$('#tbl1.tbl-body ').append("<tr id = " + rank + " class = trChild>\
           <td class = rankTD>" + rank + "</td>\
           <td class = nameTD><img style = 'vertical-align: middle' src=sprites/" + dexNumber + ".png>" + names[i] + "</img></td>\
