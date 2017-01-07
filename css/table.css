@@ -9,6 +9,19 @@ body, html {
     font-family: Open Sans;
 }
 
+#notice{
+    font-size: 30pt;
+    color: #e64946;
+}
+#smallnotice{
+    font-size: 15pt;
+    color: #e64946;
+}
+
+#notice a{
+    color: #1e3864;
+}
+
 body {    
     font-size: 10pt;
 }
