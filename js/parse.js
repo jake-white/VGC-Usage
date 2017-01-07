@@ -4,18 +4,18 @@ var moves = [], abilities = [], items = [];
 
 var currentMon = 1;
 
-var formes = {"porygon-z":"porygonz",
-"jangmo-o":"jangmoo", 
-"hakamo-o":"hakamoo", 
-"kommo-o":"kommoo", 
-"oricorio-pom-pom":"oricoriopompom",
-"oricorio-pa'u":"oricoriopau",
-"oricorio-sensu":"oricoriosensu",
-"type:null":"typenull",
-"lycanroc-midnight":"lycanrocmidnight",
-"lycanroc-midday":"lycanrocmidday",
-"zygarde-10%":"zygarde10",
-"zygarde-complete":"zygardecomplete",};
+var formes = {"porygon-z":"474",
+"jangmo-o":"782", 
+"hakamo-o":"783", 
+"kommo-o":"784", 
+"oricorio-pom-pom":"741-1",
+"oricorio-pa'u":"741-2",
+"oricorio-sensu":"741-3",
+"type:null":"772",
+"lycanroc-midnight":"745-1",
+"lycanroc-midday":"745",
+"zygarde-10%":"718-1",
+"zygarde-complete":"718-4",};
 
 $( document ).ready(function() {
     rateChange();
@@ -50,9 +50,16 @@ var parseMons = function(data){
       shorten.indexOf("-alola"));
       dexNumber = dexNums[shorten].num +"-1";
     }
-    else if(formes[shorten] != undefined) shorten = formes[shorten];
-    else if(shorten.includes("silvally")) shorten = "silvally";
+    else if(formes[shorten] != undefined) {
+      dexNumber = formes[shorten];
+    }
+    else if(shorten.includes("silvally")){
+      shorten = "silvally";
+      dexNumber = dexNums[shorten].num;
+    } 
     else dexNumber = dexNums[shorten].num;
+    console.log(dexNums["silvally"].num);
+    console.log(shorten + "" + dexNumber);
 
     usages[i] = parseFloat(usages[i]).toFixed(2);
  		$('#tbl1.tbl-body ').append("<tr id = " + rank + " class = trChild>\
