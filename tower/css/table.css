@@ -61,19 +61,19 @@ body {
 
 #primary {
     float: left;
-    width: 15%;
+    width: 20%;
     height: 100%;
 }
 
 #content {
     float: left;
-    width: 15%;
+    width: 20%;
     padding: 10px;
 }
 
 #secondary {
     float: left;
-    width: 65%;
+    width: 55%;
     height: 100%;
 }
 
