@@ -94,7 +94,6 @@ label{
 }
 table{
   width: 100%;
-  table-layout: fixed;
 }
 .tbl-header{
   font: bold 12px/18px sans-serif;
@@ -119,6 +118,10 @@ th{
     background-color: #e64946;
 }
 
+tr{
+  width: 100%;
+}
+
 td{
   border-bottom: 1px solid black;
   padding: 15px;
@@ -134,11 +137,11 @@ td{
 }
 
 .nameTD {
-  width: 35%;  
+  width: 60%;  
 }
 
 .percentTD {
-  width: 40%;  
+  width: 20%;  
 }
 
 

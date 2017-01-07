@@ -4,6 +4,19 @@ var moves = [], abilities = [], items = [];
 
 var currentMon = 1;
 
+var formes = {"porygon-z":"porygonz",
+"jangmo-o":"jangmoo", 
+"hakamo-o":"hakamoo", 
+"kommo-o":"kommoo", 
+"oricorio-pom-pom":"oricoriopompom",
+"oricorio-pa'u":"oricoriopau",
+"oricorio-sensu":"oricoriosensu",
+"type:null":"typenull",
+"lycanroc-midnight":"lycanrocmidnight",
+"lycanroc-midday":"lycanrocmidday",
+"zygarde-10%":"zygarde10",
+"zygarde-complete":"zygardecomplete",};
+
 $( document ).ready(function() {
     rateChange();
 });
@@ -18,7 +31,7 @@ var rateChange = function(){
   }, 'text');
 
   $.get(monthMoveFile, function(data) {
-    parseMoves(data) 
+    parseMoves(data)
   }, 'text');
 }
 
@@ -31,9 +44,20 @@ var parseMons = function(data){
  		var usage_start = 31, usage_end = 40;
  		names[i] = data[i].substring(name_start, name_end).trim();
  		usages[i] = data[i].substring(usage_start, usage_end).trim();
+    var shorten = names[i].replace(/ /g,'').toLowerCase();
+    if(shorten.includes("-alola")){
+      shorten = shorten.substring(0, 
+      shorten.indexOf("-alola"));
+      dexNumber = dexNums[shorten].num +"-1";
+    }
+    else if(formes[shorten] != undefined) shorten = formes[shorten];
+    else if(shorten.includes("silvally")) shorten = "silvally";
+    else dexNumber = dexNums[shorten].num;
+
+    usages[i] = parseFloat(usages[i]).toFixed(2);
  		$('#tbl1.tbl-body ').append("<tr id = " + rank + " class = trChild>\
           <td class = rankTD>" + rank + "</td>\
-          <td class = nameTD>" + names[i] + "</td>\
+          <td class = nameTD><img style = 'vertical-align: middle' src=sprites/" + dexNumber + ".png>" + names[i] + "</img></td>\
           <td class = percentTD>" + usages[i] + "</td>\
         	</tr>");
     var id = rank
