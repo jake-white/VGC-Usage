@@ -58,8 +58,6 @@ var parseMons = function(data){
       dexNumber = dexNums[shorten].num;
     } 
     else dexNumber = dexNums[shorten].num;
-    console.log(dexNums["silvally"].num);
-    console.log(shorten + "" + dexNumber);
 
     usages[i] = parseFloat(usages[i]).toFixed(2);
  		$('#tbl1.tbl-body ').append("<tr id = " + rank + " class = trChild>\

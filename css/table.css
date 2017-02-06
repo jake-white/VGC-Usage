@@ -69,13 +69,14 @@ body {
 .nav{
     padding:15px 6px 15px 6px;
 }
-
+table{
+  width: 100%;
+}
 #container {
     padding: 0 1em;
     margin: 0 auto;
-    height: 85vh;
+    height: 80vh;
 }
-
 #primary {
     float: left;
     width: 15%;
@@ -91,10 +92,9 @@ body {
 }
 
 #secondary {
+  width: 60%;
     float: left;
-    width: 60%;
-    height: 100%;
-  text-align: center;
+    text-align: center;
 }
 
 #footer {
@@ -111,28 +111,27 @@ body {
   padding-top: 5px;
   padding-left: 5px;
 }
-table{
-  width: 100%;
-     display: block ;
-}
 .tbl-header{
   font: bold 12px/18px sans-serif;
   background-color: #1e3864;
  }
+#secondary th{
+  border-bottom: 5px solid #e64946;
+}
 .tbl-content{
-  border-top: 5px solid #e64946;
   border-left: 2px solid black;
   border-bottom: 2px solid black;
-  border-right: 2px solid black;
-  overflow-x:auto;
   margin-top: 0px;
 }
 
-#primary .tbl-content{  
+#primary .tbl-content{    
+  border-top: 5px solid #e64946;
+  overflow-x:auto;
   max-height: 90%;
 }
 
 #secondary .tbl-content{  
+  border-right: 2px solid black;
   max-height: 90%;
 }
 th{
@@ -156,14 +155,14 @@ td{
 #secondary th
 {
     text-align: center;
-    width: 11.11%;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #secondary td{
     text-align: center;
-    width: 11.11%;
-    padding: 10px;  
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #primary td {  
@@ -184,30 +183,4 @@ td{
 
 .percentTD {
   width: 10%;  
-}
-
-
-/* follow me template */
-.made-with-love {
-  margin-top: 40px;
-  padding: 10px;
-  clear: left;
-  text-align: center;
-  font-size: 10px;
-  font-family: arial;
-  color: #fff;
-}
-.made-with-love i {
-  font-style: normal;
-  color: #F50057;
-  font-size: 14px;
-  position: relative;
-  top: 2px;
-}
-.made-with-love a {
-  color: #fff;
-  text-decoration: none;
-}
-.made-with-love a:hover {
-  text-decoration: underline;
 }
