@@ -4,7 +4,10 @@ var moves = [], abilities = [], items = [];
 
 var currentMon = 1;
 
-var formes = {"porygon-z":"474",
+var formes = {
+"greninja-ash":"658",
+"mimikyu-busted":"778",
+"porygon-z":"474",
 "jangmo-o":"782", 
 "hakamo-o":"783", 
 "kommo-o":"784", 
@@ -14,6 +17,7 @@ var formes = {"porygon-z":"474",
 "type:null":"772",
 "lycanroc-midnight":"745-1",
 "lycanroc-midday":"745",
+"wishiwashi-school":"746",
 "zygarde-10%":"718-1",
 "zygarde-complete":"718-4",};
 
@@ -23,8 +27,9 @@ $( document ).ready(function() {
 
 var rateChange = function(){
   month = $('#month').val();
-  var monthFile = month + '.txt';
-  var monthMoveFile = month + '-moves.txt'
+  weight = $('#weight').val();
+  var monthFile = "stats/"+month+"/gen7vgc2017-"+weight+".txt"; //ie stats/2016-11/gen7vgc2017-0.txt
+  var monthMoveFile = "stats/"+month+"/moveset/gen7vgc2017-"+weight+'.txt'; //ie stats/2016-11/moveset/gen7vgc2017-0.txt
   $.get(monthFile, function(data) {
     var dataset = data.split('\n');
     parseMons(dataset) 
@@ -45,6 +50,7 @@ var parseMons = function(data){
  		names[i] = data[i].substring(name_start, name_end).trim();
  		usages[i] = data[i].substring(usage_start, usage_end).trim();
     var shorten = names[i].replace(/ /g,'').toLowerCase();
+    console.log(shorten);
     if(shorten.includes("-alola")){
       shorten = shorten.substring(0, 
       shorten.indexOf("-alola"));
