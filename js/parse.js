@@ -50,7 +50,6 @@ var parseMons = function(data){
  		names[i] = data[i].substring(name_start, name_end).trim();
  		usages[i] = data[i].substring(usage_start, usage_end).trim();
     var shorten = names[i].replace(/ /g,'').toLowerCase();
-    console.log(shorten);
     if(shorten.includes("-alola")){
       shorten = shorten.substring(0, 
       shorten.indexOf("-alola"));
