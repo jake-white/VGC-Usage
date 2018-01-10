@@ -8,9 +8,9 @@ var formes = {
 "greninja-ash":"658",
 "mimikyu-busted":"778",
 "porygon-z":"474",
-"jangmo-o":"782", 
-"hakamo-o":"783", 
-"kommo-o":"784", 
+"jangmo-o":"782",
+"hakamo-o":"783",
+"kommo-o":"784",
 "oricorio-pom-pom":"741-1",
 "oricorio-pa'u":"741-2",
 "oricorio-sensu":"741-3",
@@ -19,7 +19,11 @@ var formes = {
 "lycanroc-midday":"745",
 "wishiwashi-school":"746",
 "zygarde-10%":"718-1",
-"zygarde-complete":"718-4",};
+"zygarde-complete":"718-4",
+"landorustherian":"645-1",
+"thundurustherian":"642-1",
+"tornadustherian":"641-1",
+};
 
 $( document ).ready(function() {
     rateChange();
@@ -28,11 +32,11 @@ $( document ).ready(function() {
 var rateChange = function(){
   month = $('#month').val();
   weight = $('#weight').val();
-  var monthFile = "stats/"+month+"/gen7vgc2017-"+weight+".txt"; //ie stats/2016-11/gen7vgc2017-0.txt
-  var monthMoveFile = "stats/"+month+"/moveset/gen7vgc2017-"+weight+'.txt'; //ie stats/2016-11/moveset/gen7vgc2017-0.txt
+  var monthFile = "stats/"+month+"/gen7vgc2018-"+weight+".txt"; //ie stats/2016-11/gen7vgc2017-0.txt
+  var monthMoveFile = "stats/"+month+"/moveset/gen7vgc2018-"+weight+'.txt'; //ie stats/2016-11/moveset/gen7vgc2017-0.txt
   $.get(monthFile, function(data) {
     var dataset = data.split('\n');
-    parseMons(dataset) 
+    parseMons(dataset)
   }, 'text');
 
   $.get(monthMoveFile, function(data) {
@@ -45,13 +49,18 @@ var parseMons = function(data){
   $('#tbl1.tbl-body ').empty();
  	for(var i = 5; i < data.length-2; ++i){
  		++rank;
- 		var name_start = 10, name_end = 28;
+ 		var name_start = 10, name_end = data[i].indexOf('|', 10) - 1;
  		var usage_start = 31, usage_end = 40;
  		names[i] = data[i].substring(name_start, name_end).trim();
  		usages[i] = data[i].substring(usage_start, usage_end).trim();
     var shorten = names[i].replace(/ /g,'').toLowerCase();
+    shorten = shorten.split('-').join('')
+    .split('totem').join('')
+    .split('.').join('')
+    .split('\'').join(''); //getting rid of weird forme bs
+    console.log(shorten + " " + i);
     if(shorten.includes("-alola")){
-      shorten = shorten.substring(0, 
+      shorten = shorten.substring(0,
       shorten.indexOf("-alola"));
       dexNumber = dexNums[shorten].num +"-1";
     }
@@ -61,7 +70,7 @@ var parseMons = function(data){
     else if(shorten.includes("silvally")){
       shorten = "silvally";
       dexNumber = dexNums[shorten].num;
-    } 
+    }
     else dexNumber = dexNums[shorten].num;
 
     usages[i] = parseFloat(usages[i]).toFixed(2);
