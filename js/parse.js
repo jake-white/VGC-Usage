@@ -23,6 +23,8 @@ var formes = {
 "landorustherian":"645-1",
 "thundurustherian":"642-1",
 "tornadustherian":"641-1",
+"necrozmaduskmane":"800-1",
+"necrozmadawnwings":"800-2",
 };
 
 $( document ).ready(function() {
@@ -32,8 +34,8 @@ $( document ).ready(function() {
 var rateChange = function(){
   month = $('#month').val();
   weight = $('#weight').val();
-  var monthFile = "stats/"+month+"/gen7vgc2018-"+weight+".txt"; //ie stats/2016-11/gen7vgc2017-0.txt
-  var monthMoveFile = "stats/"+month+"/moveset/gen7vgc2018-"+weight+'.txt'; //ie stats/2016-11/moveset/gen7vgc2017-0.txt
+  var monthFile = "stats/"+month+"/gen7vgc2019-"+weight+".txt"; //ie stats/2016-11/gen7vgc2017-0.txt
+  var monthMoveFile = "stats/"+month+"/moveset/gen7vgc2019-"+weight+'.txt'; //ie stats/2016-11/moveset/gen7vgc2017-0.txt
   $.get(monthFile, function(data) {
     var dataset = data.split('\n');
     parseMons(dataset)
