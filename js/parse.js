@@ -25,6 +25,8 @@ var formes = {
 "tornadustherian":"641-1",
 "necrozmaduskmane":"800-1",
 "necrozmadawnwings":"800-2",
+"zygarde10":"718-1",
+"zygardecomplete":"718-2",
 };
 
 $( document ).ready(function() {
@@ -59,7 +61,8 @@ var parseMons = function(data){
     shorten = shorten.split('-').join('')
     .split('totem').join('')
     .split('.').join('')
-    .split('\'').join(''); //getting rid of weird forme bs
+    .split('\'').join('')
+    .split('%').join(''); //getting rid of weird forme bs
     if(shorten.includes("-alola")){
       shorten = shorten.substring(0,
       shorten.indexOf("-alola"));
